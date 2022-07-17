@@ -5,43 +5,28 @@
             Quero fazer o login (autenticação) na plataforma
             Para visualizar meus pedidos
 
+            Contexto: Dado que eu acesse a página de autenticação da EBAC-SHOP
 
-            Cenário: Autenticação com dados válidos
-            Dado que coloquei o e-mail "joao@ebac.com.br"
-            Quando coloco a senha "senha@123"
-            E clico em "logar"
-            Então entro na página de checkout do site
+            Cenário: Autenticação válida
+            Quando eu digitar o usúario "talissa_ebac@shop.com"
+            E a senha "123@talissa"
+            Então entro na página de checkout
 
-            Cenário: Autenticação com o e-mail inválido
-            Dado que coloquei o e-mail "joaooo@ebac.com.br"
-            E a senha "senha@123"
-            Quando eu clico em "logar"
-            Então ele mostra a mensagem "E-mail ou senha inválido"
 
-            Cenário: Autenticação com o e-mail inválido
-            Dado que coloquei o e-mail "joao@ebac.com.br"
-            E a senha "senhafffff@123"
-            Quando eu clico em "logar"
-            Então ele mostra a mensagem "E-mail ou senha inválido"
+            Cenário: Autenticação inválida
+            Quando eu digitar o usuário "talissa_ebac@shop.com"
+            E a senha "talissssss@321"
+            Então ele exibe a mensagem "Usuário ou senha inválidos"
 
-            Esquema do Cenário: Autenticação com dados válidos
-            Dado que coloquei o <usuario>
-            Quando coloco a <senha>
-            E clico em "logar"
-            Então entro na página de checkout do site
 
+            Cenário: Autenticação válida
+            Quando eu digitar o <usuario>
+            E a <senha>
+            Então devo entrar para a página de checkout
 
             Exemplos:
-
-            | usuario          | senha     |
-            | joao@ebac.com.br | senha@123 |
-            | joao@ebac.com.br | senha@123 |
-            | joao@ebac.com.br | senha@123 |
-            | joao@ebac.com.br | senha@123 |
-            | joao@ebac.com.br | senha@123 |
-            | joao@ebac.com.br | senha@123 |
-            | joao@ebac.com.br | senha@123 |
-            | joao@ebac.com.br | senha@123 |
-            | joao@ebac.com.br | senha@123 |
-            | joao@ebac.com.br | senha@123 |
-            
+            | usuario                  | senha          |
+            | talissa_ebacshop@br.com  | 123@60a        |
+            | virginia_escola@ebac.com | 8246@wrwytw    |
+            | larissa_maria            | 690747@gilda   |
+            | angela_silva@signo.com   | 88888@dezembro |

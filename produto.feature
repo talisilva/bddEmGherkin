@@ -6,37 +6,29 @@
             E escolher a quantidade
             Para depois inserir no carrinho
 
-            Esquema do Cenário: Selecionando cor e tamanho
-            Dado que escolhi uma camiseta
-            Quando eu for selecionar a "cor","tamanho" e a "quantidade"
-            Então posso clicar no botão "comprar"
+            Contexto: Dado que escolhi meu produto
 
-            Esquema do Cenário: Selecionando quantidade acima de 10
-            Dado que escolhi uma camiseta
-            Quando eu for selecionar a "cor","tamanho" e a "quantidade" no valor de 11 peças
-            Então exibe a mensagem "Quantidade inválida"
-
-            Cenário: Limpando configuração
-            Dado que configurei minha compra
-            Mas desisti da aquisição
-            Quando eu clicar em "limpar"
-            Então ele zera a configuração que criei
+            Cenário: Seleção de 10 unidades
+            Quando seleciono o size "S", color "Orange", quantidade de 10
+            E clico em comprar
+            Então ele adiciona o produto em meu carrinho
 
 
-            Exemplos:
-            | cor    | tamanho | quantidade |
-            | blue   | M       | 1>=10      |
-            | blue   | S       | 1>=10      |
-            | blue   | XL      | 1>=10      |
-            | blue   | XS      | 1>=10      |
-            | Orange | M       | 1>=10      |
-            | Orange | S       | 1>=10      |
-            | Orange | XL      | 1>=10      |
-            | Orange | XS      | 1>=10      |
-            | Red    | M       | 1>=10      |
-            | Red    | S       | 1>=10      |
-            | Red    | XL      | 1>=10      |
-            | Red    | XS      | 1>=10      |
+            Cenário: Botão de limpar
+            Quando seleciono o size "L", color "Blue", quantidade de 2
+            E clico no botão limpar
+            Então ele volta ao estado original
+
+
+            Cenário: Quantidade em branco
+            Quando configuro o produto com os seguintes dados:
+            | size | color  |
+            | xs   | Orange |
+            E deixo a quantidade em branco 
+            Então clico em comprar, ele exibe a mensagem informando que o campo quantidade é obrigatório
+
+
+
 
 
 
